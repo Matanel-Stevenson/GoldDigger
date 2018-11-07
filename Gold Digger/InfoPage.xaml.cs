@@ -20,11 +20,22 @@ namespace Gold_Digger
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public sealed partial class Instructions : Page
+    public sealed partial class InfoPage : Page
     {
-        public Instructions()
+        public InfoPage()
         {
             this.InitializeComponent();
+        }
+
+        private async void Return_Click(object sender, RoutedEventArgs e)
+        {
+            var element = new MediaElement();
+            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            var file = await folder.GetFileAsync("button-11.wav");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            element.SetSource(stream, "");
+            element.Play();
+            Frame.Navigate(typeof(MainPage));
         }
     }
 }

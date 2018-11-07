@@ -3,8 +3,11 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -25,6 +28,61 @@ namespace Gold_Digger
         public MainPage()
         {
             this.InitializeComponent();
+        }
+        protected override void OnNavigatedTo(NavigationEventArgs e)
+        {
+            base.OnNavigatedTo(e);
+
+            SetTitleBarBackground();
+        }
+        private void SetTitleBarBackground()
+        {
+            // Get the instance of the Title Bar
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+
+            // Set the color of the Title Bar content
+            titleBar.BackgroundColor = Colors.Gold;
+            titleBar.ForegroundColor = Colors.Black;
+
+            // Set the color of the Title Bar buttons
+            titleBar.ButtonBackgroundColor = Colors.Gold;
+            titleBar.ButtonForegroundColor = Colors.Black;
+        }
+        private async void Play_Click(object sender, RoutedEventArgs e)
+        {
+            var element = new MediaElement();
+            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            var file = await folder.GetFileAsync("button-11.wav");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            element.SetSource(stream, "");
+            element.Play();
+        }
+
+        private async void Info_Click(object sender, RoutedEventArgs e)
+        {
+            var element = new MediaElement();
+            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            var file = await folder.GetFileAsync("button-11.wav");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            element.SetSource(stream, "");
+            element.Play();
+            Frame.Navigate(typeof(InfoPage));
+        }
+
+        private async void Settings_Click(object sender, RoutedEventArgs e)
+        {
+            var element = new MediaElement();
+            var folder = await Windows.ApplicationModel.Package.Current.InstalledLocation.GetFolderAsync("Assets");
+            var file = await folder.GetFileAsync("button-11.wav");
+            var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
+            element.SetSource(stream, "");
+            element.Play();
+            Frame.Navigate(typeof(SettingsPage));
+        }
+
+        private void Exit_Click(object sender, RoutedEventArgs e)
+        {
+            CoreApplication.Exit();
         }
     }
 }
