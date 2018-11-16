@@ -1,0 +1,49 @@
+﻿<Page
+    x:Class="Gold_Digger.Start_Play_Level_1"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Gold_Digger"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.Background>
+            <ImageBrush Stretch="Fill" ImageSource="Assets\Background.jpg"></ImageBrush>
+        </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBlock Text="Player's Name: " Grid.Column="1" Grid.Row="4" Height="110" Width="240" HorizontalAlignment="Left" Foreground="Gold" FontSize="28" FontWeight="Bold" FontFamily="Showcard Gothic"/>
+            <TextBox Text="Player's Name" Height="30" Width="150" Grid.Column="2" Grid.Row="4" Margin="13,12,77,76"/>
+        <TextBlock Text="ID: " Grid.Column="1" Grid.Row="5" Height="110" Width="240" Foreground="Gold" FontSize="28" FontWeight="Bold" FontFamily="Showcard Gothic"></TextBlock>
+            <TextBox Text="ID" Height="30" Width="150"></TextBox>
+        <TextBlock Text="NickName: " Grid.Column="1" Grid.Row="6" Height="110" Width="240" Foreground="Gold" FontSize="28" FontWeight="Bold" FontFamily="Showcard Gothic"></TextBlock>
+            <TextBox Text="NickName" Height="30" Width="150"></TextBox>
+        <TextBlock Text="Your Goals: " Grid.Column="1" Grid.Row="7" Height="110" Width="240" Foreground="Gold" FontSize="28" FontWeight="Bold" FontFamily="Showcard Gothic"></TextBlock>
+        
+        
+        
+        
+        <Button Content="Submit" Height="30" Width="150"></Button>
+    </Grid>
+</Page>

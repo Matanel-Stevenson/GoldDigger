@@ -16,5 +16,6 @@
         <Button Name="Return" Width="100" Height="100" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Return_Click">
             <Image Source="Assets\Return Button.png"/>
         </Button>
+        <TextBlock Text="Volume"></TextBlock>
     </Grid>
 </Page>

@@ -12,22 +12,41 @@
         <Grid.Background>
             <ImageBrush Stretch="Fill" ImageSource="Assets\Background.jpg"></ImageBrush>
         </Grid.Background>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+            <RowDefinition></RowDefinition>
+        </Grid.RowDefinitions>
         <!--Title-->
-        <Image Source="Assets\Logo.png" HorizontalAlignment="Left" VerticalAlignment="Center" Height="350" Width="400"/>
+        <Image Source="Assets\Logo.png" HorizontalAlignment="Left" VerticalAlignment="Top" Height="350" Width="350" Grid.ColumnSpan="2" Margin="0,135,0,0" Grid.RowSpan="4"/>
         <!--Play Button-->
-        <Button Name="Play" Width="100" Height="100" HorizontalAlignment="Center" Click="Play_Click">
+        <Button Name="Play" Grid.Column="3" Grid.Row="4" Width="150" Height="100" HorizontalAlignment="Center" Click="Play_Click" VerticalAlignment="Center" Margin="0,0,0,0">
             <Image Source="Assets\Play Button.png"/>
         </Button>
         <!--Info Button-->
-        <Button Name="Info" Width="100" Height="100" Background="Transparent" HorizontalAlignment="Left" VerticalAlignment="Bottom" Click="Info_Click">
-            <Image Source="Assets\Info Button.png"/>
+        <Button Name="Info" Grid.Row="7" Width="100" Height="100" Background="Transparent" Click="Info_Click" HorizontalAlignment="Left" VerticalAlignment="Center" Grid.ColumnSpan="2" Margin="107,0,0,0">
+            <Image Source="Assets\Info Button.png" Margin="-3.4,0.6,3.6,-0.4" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
         </Button>
         <!--Settings Button-->
-        <Button Name="Settings" Width="100" Height="100" HorizontalAlignment="Left"  Click="Settings_Click">
+        <Button Name="Settings" Grid.Column="0" Grid.Row="7" Width="100" Height="100" HorizontalAlignment="Left" VerticalAlignment="Center" Click="Settings_Click" Margin="0,0,0,0">
             <Image Source="Assets\Settings Button.png"/>
         </Button>
         <!--Exit Button-->
-        <Button Name="Exit" Width="100" Height="100" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Exit_Click">
+        <Button Name="Exit" Grid.Column="6" Grid.Row="7" Width="100" Height="100" Background="Transparent" HorizontalAlignment="Right" VerticalAlignment="Bottom" Click="Exit_Click" Margin="0,35,0,0">
             <Image Source="Assets\Exit Button.png"/>
         </Button>
     </Grid>

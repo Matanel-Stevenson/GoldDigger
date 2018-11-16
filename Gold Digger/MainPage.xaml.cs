@@ -56,6 +56,7 @@ namespace Gold_Digger
             var stream = await file.OpenAsync(Windows.Storage.FileAccessMode.Read);
             element.SetSource(stream, "");
             element.Play();
+            Frame.Navigate(typeof(Start_Play_Level_1));
         }
 
         private async void Info_Click(object sender, RoutedEventArgs e)
